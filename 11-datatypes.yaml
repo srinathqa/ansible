@@ -1,0 +1,25 @@
+---
+- name: datatypes
+  hosts: web
+  become: yes
+  vars:
+    course: DevOps with AWS Training
+    Tools: #List
+    - Linux
+    - AWS
+    - Ansible
+    - Teraform
+    - Docker
+    - K8s
+    - Monitoring
+    Experience: #Map or dictionary
+      DevOps: 10
+      AWS: 5
+      Ansible: 3
+      Docker: 5
+      K8s: 3
+    Real_Project: true
+    tasks:
+    - name: print variables
+      ansible.builtin.debug:
+        msg: "Course: {{Course}}, Tools covered {{Tools}}, Experience is {{Expericence}}, Is real project covered {{Real_Project}}"

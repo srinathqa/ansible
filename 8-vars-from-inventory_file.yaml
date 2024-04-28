@@ -1,0 +1,10 @@
+---
+- name: Variables from Inventory file
+  hosts: web
+  become: yes
+  tasks:
+  - name: print variable information from inventory file
+    vars:
+      company: "Infor"
+    ansible.builtin.debug:
+      msg: " I am {{Name}} and Designation is {{Designation}} and experience is {{Experience}} working in company {{company}}"

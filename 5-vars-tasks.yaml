@@ -1,0 +1,23 @@
+---
+- name: variales declared at tasks 
+  hosts: web
+  become: yes
+  vars:
+    Designation: "DevOps"
+    Name: "Srinath"
+    Experience: 10
+  tasks:
+    - name: print override the variable data
+      vars:
+        Designation: "Principal Quality Assurance"
+        Name: "Srinath Bathina"
+        Experience: 18
+      ansible.builtin.debug:
+        msg: "I am {{Name}} working as {{Designation}} and Experience is {{Experience}}."
+
+    - name: print variable data
+      ansible.builtin.debug:
+        msg: "I am {{Name}} working as {{Designation}} and Experience is {{Experience}}"
+
+      
+      

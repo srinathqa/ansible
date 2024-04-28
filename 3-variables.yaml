@@ -1,0 +1,11 @@
+---
+- name: variables
+  hosts: web
+  become: yes
+  vars:
+    COURSE: "DevOps"
+
+  tasks:
+  - name: variables
+    ansible.builtin.debug:
+      msg " Hello, This is training for course: {{COURSE}}"
